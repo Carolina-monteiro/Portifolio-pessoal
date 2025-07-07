@@ -1,0 +1,193 @@
+/* 
+   style.css
+   Folha de estilos para o portfólio pessoal.
+   Desenvolvido sem frameworks, apenas com CSS puro.
+*/
+
+/* --- Variáveis de Cor para fácil customização --- */
+:root {
+    --primary-color: #0077b6; /* Azul UNINTER-like */
+    --secondary-color: #023e8a;
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --light-color: #ffffff;
+    --border-color: #ddd;
+}
+
+/* --- Estilos Globais e Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding não afete a largura total */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Estilo do Cabeçalho e Navegação --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 1rem 0;
+    position: fixed; /* Fixa o menu no topo da tela */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Garante que o menu fique sobre o conteúdo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex; /* Alinha os links horizontalmente */
+    justify-content: center; /* Centraliza os links */
+    align-items: center;
+}
+
+header nav ul li a {
+    color: var(--light-color);
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Efeito suave na transição */
+}
+
+/* Efeito ao passar o mouse sobre o link */
+header nav ul li a:hover {
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+/* Estilo para o link da página ativa */
+header nav ul li a.active {
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+/* --- Estilo do Conteúdo Principal --- */
+main {
+    padding-top: 80px; /* Espaço para o cabeçalho fixo */
+    padding-bottom: 60px; /* Espaço para o rodapé */
+    max-width: 900px;
+    margin: 0 auto; /* Centraliza o conteúdo principal */
+}
+
+/* --- Estilos das Seções de Conteúdo --- */
+.content-section {
+    display: none; /* Esconde todas as seções por padrão */
+    padding: 2rem;
+    margin-bottom: 1rem;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* A classe 'active' torna a seção visível */
+.content-section.active {
+    display: block;
+}
+
+h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    color: var(--primary-color);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+/* --- Estilos Específicos (Portfólio e Formulário) --- */
+
+/* Grid do Portfólio */
+.portfolio-grid {
+    display: grid;
+    /* Cria colunas responsivas: elas se ajustam automaticamente */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; /* Espaçamento entre os itens */
+}
+
+.portfolio-item {
+    background-color: var(--background-color);
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.portfolio-item a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.portfolio-item a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Formulário de Contato */
+form {
+    display: flex;
+    flex-direction: column; /* Organiza os campos verticalmente */
+}
+
+form label {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+form button {
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* --- Estilo do Rodapé --- */
+footer {
+    background-color: #333;
+    color: var(--light-color);
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed; /* Fixa o rodapé na base */
+    width: 100%;
+    bottom: 0;
+}
